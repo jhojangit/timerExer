@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import useOptions from '../../store/options';
+import bell from '../../../public/bell.mp3'
+import rest from '../../../public/rest.mp3'
 
 const Counter = ({ time, timeWork, timeRest, title }) => {
 
@@ -75,7 +77,7 @@ const Counter = ({ time, timeWork, timeRest, title }) => {
             {
                 isWork &&
                 <audio autoPlay>
-                    <source src="public\Bell.mp3" type="audio/mp3" />
+                    <source src= {bell} type="audio/mp3" />
                     Tu navegador no soporta la reproducción de audio.
                 </audio>
             }
@@ -83,7 +85,7 @@ const Counter = ({ time, timeWork, timeRest, title }) => {
             {
                 isRest &&
                 <audio autoPlay>
-                    <source src="public\exercise.mp3" type="audio/mp3" />
+                    <source src={rest} type="audio/mp3" />
                     Tu navegador no soporta la reproducción de audio.
                 </audio>
             }

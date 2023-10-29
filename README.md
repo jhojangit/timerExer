@@ -1,4 +1,4 @@
-# React + Vite This repository is an app to time exercises and their breaks.
+# timerExer
 
 
 Includes sound so you don't have to see the device.

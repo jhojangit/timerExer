@@ -3,10 +3,10 @@ import { Howl } from 'howler';
 
 
 
-const CompleteCircuit = ({song}) => {
+const MakeSound = ({song}) => {
     const sound = new Howl({
         src: [song],
-        volume: 0.5, 
+        volume: 0.2, 
     });
 
     useEffect(() => {
@@ -19,4 +19,4 @@ const CompleteCircuit = ({song}) => {
     );
 };
 
-export default CompleteCircuit;
+export default MakeSound

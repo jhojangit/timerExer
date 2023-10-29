@@ -2,7 +2,7 @@ import './App.css';
 import useOptions from './store/options';
 import Options from './components/options/Options';
 import Counter from './components/Counter/Counter';
-import CompleteCircuit from './components/completeCircuit/CompleteCircuit';
+import MakeSound from './components/makeSound/MakeSound';
 
 
 function App() {
@@ -22,7 +22,10 @@ function App() {
     <div className="App">
 
       {
-        !start && <CompleteCircuit song={completeSound}/>
+        !start && <MakeSound song={completeSound}/>
+        
+
+        
       }
 
       {

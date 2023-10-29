@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import useOptions from '../../store/options';
-import bell from '../../assets/bell.mp3'
-import rest from '../../assets/rest.mp3'
-import CompleteCircuit from '../completeCircuit/CompleteCircuit';
+import MakeSound from '../makeSound/MakeSound';
 
 
 
@@ -23,16 +21,6 @@ const Counter = ({ time, title }) => {
 
     const [seconds, setSeconds] = useState(time);
     const [isPaused, setIsPaused] = useState(false);
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -111,21 +99,17 @@ const Counter = ({ time, title }) => {
 
 
             {
-
                 isWork &&
                 <section>
-                    <CompleteCircuit song={workSong}/>
+                    <MakeSound song={workSong}/>
                 </section>
             }
 
+
             {
                 isRest &&
-
                 <section>
-
-                <CompleteCircuit song={restSong}/>
-
-
+                    <MakeSound song={restSong}/>
                 </section>
             }
 

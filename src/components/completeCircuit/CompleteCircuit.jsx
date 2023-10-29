@@ -1,14 +1,22 @@
-import React from 'react'
-import complete from '../../assets/complete.mp3'
+import React, { useEffect } from 'react';
+import { Howl } from 'howler';
 
-const CompleteCircuit = () => {
-  return (
-    <div>
-        <audio  autoPlay >
-            <source src={complete} type="audio/mp3" />
-            Tu navegador no soporta la reproducción de audio.
-      </audio>
-    </div>  )
-}
 
-export default CompleteCircuit
+
+const CompleteCircuit = ({song}) => {
+    const sound = new Howl({
+        src: [song],
+        volume: 0.5, 
+    });
+
+    useEffect(() => {
+            sound.play();
+    }, []);
+
+    return (
+        <>
+        </>
+    );
+};
+
+export default CompleteCircuit;

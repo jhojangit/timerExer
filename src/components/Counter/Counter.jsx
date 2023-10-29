@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react'
 import useOptions from '../../store/options';
 import bell from '../../assets/bell.mp3'
 import rest from '../../assets/rest.mp3'
+import CompleteCircuit from '../completeCircuit/CompleteCircuit';
 
 
 
-const Counter = ({ time, timeWork, timeRest, title }) => {
+const Counter = ({ time, title }) => {
+    
 
 
     const { rounds, 
@@ -22,10 +24,21 @@ const Counter = ({ time, timeWork, timeRest, title }) => {
     const [seconds, setSeconds] = useState(time);
     const [isPaused, setIsPaused] = useState(false);
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     useEffect(() => {
-
-
-
 
         let counter;
 
@@ -36,7 +49,7 @@ const Counter = ({ time, timeWork, timeRest, title }) => {
                 setSeconds((prevSeconds) => {
                     const newSeconds = prevSeconds - 1;
 
-                    if (newSeconds <= 0) {
+                    if (newSeconds < 0) {
                         clearInterval(counter);
                         if (isWork) {
                             setIsRestTrue();
@@ -73,6 +86,8 @@ const Counter = ({ time, timeWork, timeRest, title }) => {
 
 
 
+    const workSong = 'src/assets/bell.mp3'
+    const restSong = 'src/assets/rest.mp3'
 
 
 
@@ -99,14 +114,7 @@ const Counter = ({ time, timeWork, timeRest, title }) => {
 
                 isWork &&
                 <section>
-
-                    <audio autoPlay>
-                        <source src={bell} type="audio/mp3" />
-                        Tu navegador no soporta la reproducción de audio.
-                    </audio>
-
-
-
+                    <CompleteCircuit song={workSong}/>
                 </section>
             }
 
@@ -115,10 +123,8 @@ const Counter = ({ time, timeWork, timeRest, title }) => {
 
                 <section>
 
-                    <audio autoPlay>
-                        <source src={rest} type="audio/mp3" />
-                        Tu navegador no soporta la reproducción de audio.
-                    </audio>
+                <CompleteCircuit song={restSong}/>
+
 
                 </section>
             }

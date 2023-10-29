@@ -4,7 +4,7 @@ import useOptions from '../../store/options'
 
 const Options = () => {
 
-  const {setTimeWork, setTimeRest, setRounds, setIsWorkTrue, setStartTrue} = useOptions()
+  const { setTimeWork, setTimeRest, setRounds, setIsWorkTrue, setStartTrue } = useOptions()
 
 
 
@@ -25,7 +25,7 @@ const Options = () => {
     e.target.roundsSetNumber.value = ""
 
 
-    if(timeSetNumber != 0 && timeSetNumber != 0 && roundsNumber != 0 ){
+    if (timeSetNumber != 0 && timeSetNumber != 0 && roundsNumber != 0) {
       setIsWorkTrue()
       setStartTrue()
     }
@@ -43,15 +43,33 @@ const Options = () => {
 
       <form onSubmit={handleOptions}>
         <label> Time to work
-          <input className='options__btn buttonApp' type="number" name="timeWorkNumber"  id='timeWorkNumber' required/>
+          <input className='options__btn buttonApp'
+            type="text"
+            pattern="[0-9]*"
+            inputMode="numeric"
+            name="timeWorkNumber"
+            id="timeWorkNumber"
+            required />
         </label>
 
         <label> Tiempo to rest
-          <input className='options__btn buttonApp' type="number" name="timeSetNumber"   id='timeSetNumber' required/>
+          <input className='options__btn buttonApp'
+            type="text"
+            pattern="[0-9]*"
+            inputMode="numeric"
+            name="timeSetNumber"
+            id="timeSetNumber"
+            required />
         </label>
 
         <label> Rounds
-          <input className='options__btn buttonApp' type="number" name="roundsSetNumber" id='roundsSetNumber' required/>
+          <input className='options__btn buttonApp'
+            type="text"
+            pattern="[0-9]*"
+            inputMode="numeric"
+            name="roundsSetNumber"
+            id="roundsSetNumber"
+            required />
         </label>
 
         <input type="submit" value="SEND" />

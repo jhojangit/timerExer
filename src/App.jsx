@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 import './App.css';
 import useOptions from './store/options';
 import Options from './components/options/Options';
@@ -6,10 +5,9 @@ import Counter from './components/Counter/Counter';
 import CompleteCircuit from './components/completeCircuit/CompleteCircuit';
 
 
-
 function App() {
 
-
+  const completeSound = 'src/assets/complete.mp3'
   const { timeWork } = useOptions()
   const { timeRest } = useOptions()
   const { rounds } = useOptions()
@@ -24,7 +22,7 @@ function App() {
     <div className="App">
 
       {
-        !start && <CompleteCircuit/>
+        !start && <CompleteCircuit song={completeSound}/>
       }
 
       {

@@ -1,0 +1,16 @@
+:root {
+  --principal-color-black: #1f2533;
+  --secundary-color-black: #1e2538;
+}
+
+*{
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img{
+  width: 100%;
+}
+

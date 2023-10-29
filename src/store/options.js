@@ -4,9 +4,9 @@ const useOptions = create((set) => ({
     timeWork: 0,
     timeRest: 0,
     rounds:   0,
-    isWork: false,
-    isRest: false,
-    start: false,
+    isWork:   false,
+    isRest:   false,
+    start:    false,
 
     setTimeWork:   (n) => set(() => ({timeWork: n           })),
     setTimeRest:   (n) => set(() => ({timeRest: n           })),
@@ -18,7 +18,10 @@ const useOptions = create((set) => ({
     setIsWorkFalse:()  => set(() => ({isWork:   false       })),
     setIsRestTrue: ()  => set(() => ({isRest:   true        })),
     setIsRestFalse:()  => set(() => ({isRest:   false       })),
-
+    setFinish:     ()  => set(() => ({rounds:   0           })),
+    setFinish:     ()  => set(() => ({isRest:   false       })),
+    setFinish:     ()  => set(() => ({isWork:   false       })),
+    setFinish:     ()  => set(() => ({start:    false       })),
 }))
 
 export default useOptions

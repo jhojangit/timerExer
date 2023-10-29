@@ -16,16 +16,22 @@ const Counter = ({ time, timeWork, timeRest, title }) => {
         setRoundsMinus, 
         isWork, 
         isRest, 
-        setStartFalse } = useOptions();
+        setStartFalse,
+        setFinish } = useOptions();
 
     const [seconds, setSeconds] = useState(time);
     const [isPaused, setIsPaused] = useState(false);
-    const [isFinish, setIsFinish] = useState(false);
 
     useEffect(() => {
+
+
+
+
         let counter;
 
         if (rounds > 0 && !isPaused) {
+
+
             counter = setInterval(() => {
                 setSeconds((prevSeconds) => {
                     const newSeconds = prevSeconds - 1;
@@ -49,17 +55,21 @@ const Counter = ({ time, timeWork, timeRest, title }) => {
         }
 
         if (rounds === 0) {
-            setIsRestFalse()
-            setIsWorkFalse()
-            setStartFalse()
+            setFinish()
         }
 
         return () => clearInterval(counter);
     }, [isPaused]);
 
+
     const handlePauseToggle = () => {
         setIsPaused((prevIsPaused) => !prevIsPaused);
     };
+
+    const handleFinish = () => {
+        setFinish()
+    };
+
 
 
 
@@ -77,6 +87,10 @@ const Counter = ({ time, timeWork, timeRest, title }) => {
                 <button onClick={handlePauseToggle}>
                     {isPaused ? 'Reanudar' : 'Pausar'}
                 </button>
+
+                <button onClick={handleFinish}> Finish here</button>
+
+                
             </section>
 
 
@@ -108,10 +122,6 @@ const Counter = ({ time, timeWork, timeRest, title }) => {
 
                 </section>
             }
-
-
-
-
 
 
         </div >

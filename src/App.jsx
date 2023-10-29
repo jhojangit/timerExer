@@ -3,6 +3,7 @@ import './App.css';
 import useOptions from './store/options';
 import Options from './components/options/Options';
 import Counter from './components/Counter/Counter';
+import Complete from './components/complete/complete';
 
 
 
@@ -22,10 +23,13 @@ function App() {
   return (
     <div className="App">
 
-
+      {
+        !start && <Complete/>
+      }
 
       {
         !start && <Options />
+        
       }
 
 

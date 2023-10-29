@@ -42,15 +42,15 @@ const Options = () => {
 
 
       <form onSubmit={handleOptions}>
-        <label> Tiempo de ejercicio
+        <label> Time to work
           <input className='options__btn buttonApp' type="number" name="timeWorkNumber"  id='timeWorkNumber' required/>
         </label>
 
-        <label> Tiempo de descanso
+        <label> Tiempo to rest
           <input className='options__btn buttonApp' type="number" name="timeSetNumber"   id='timeSetNumber' required/>
         </label>
 
-        <label> Rondas
+        <label> Rounds
           <input className='options__btn buttonApp' type="number" name="roundsSetNumber" id='roundsSetNumber' required/>
         </label>
 

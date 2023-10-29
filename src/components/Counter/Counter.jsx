@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import useOptions from '../../store/options';
-import bell from '../../../public/bell.mp3'
-import rest from '../../../public/rest.mp3'
+import bell from '../../assets/bell.mp3'
+import rest from '../../assets/rest.mp3'
+
+
 
 const Counter = ({ time, timeWork, timeRest, title }) => {
 

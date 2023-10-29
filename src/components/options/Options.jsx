@@ -52,7 +52,7 @@ const Options = () => {
             required />
         </label>
 
-        <label> Tiempo to rest
+        <label> Time to rest
           <input className='options__btn buttonApp'
             type="text"
             pattern="[0-9]*"

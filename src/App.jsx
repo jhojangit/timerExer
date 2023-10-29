@@ -7,7 +7,7 @@ import MakeSound from './components/makeSound/MakeSound';
 
 function App() {
 
-  const completeSound = 'src/assets/complete.mp3'
+
   const { timeWork } = useOptions()
   const { timeRest } = useOptions()
   const { rounds } = useOptions()
@@ -16,16 +16,11 @@ function App() {
   const { start } = useOptions()
 
 
-
-
   return (
     <div className="App">
 
       {
-        !start && <MakeSound song={completeSound}/>
-        
-
-        
+        !start && <MakeSound music={"/complete.mp3"}/>
       }
 
       {

@@ -74,12 +74,6 @@ const Counter = ({ time, title }) => {
 
 
 
-    const workSong = 'src/assets/bell.mp3'
-    const restSong = 'src/assets/rest.mp3'
-
-
-
-
     return (
         <div>
             <h1>{title}</h1>
@@ -101,7 +95,7 @@ const Counter = ({ time, title }) => {
             {
                 isWork &&
                 <section>
-                    <MakeSound song={workSong}/>
+                    <MakeSound music={"/bell.mp3"}/>
                 </section>
             }
 
@@ -109,7 +103,7 @@ const Counter = ({ time, title }) => {
             {
                 isRest &&
                 <section>
-                    <MakeSound song={restSong}/>
+                    <MakeSound music={"/rest.mp3"}/>
                 </section>
             }
 

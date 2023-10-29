@@ -2,10 +2,11 @@ import React, { useEffect } from 'react';
 import { Howl } from 'howler';
 
 
+const MakeSound = ({music}) => {
 
-const MakeSound = ({song}) => {
+    
     const sound = new Howl({
-        src: [song],
+        src: [music],
         volume: 0.2, 
     });
 

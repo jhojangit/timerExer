@@ -86,8 +86,6 @@ const Counter = ({ time, title }) => {
                 </button>
 
                 <button onClick={handleFinish}> Finish here</button>
-
-                
             </section>
 
 

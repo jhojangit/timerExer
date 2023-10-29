@@ -1,15 +1,14 @@
 import React from 'react'
 import complete from '../../assets/complete.mp3'
 
-const Complete = () => {
+const CompleteCircuit = () => {
   return (
     <div>
         <audio  autoPlay >
             <source src={complete} type="audio/mp3" />
             Tu navegador no soporta la reproducción de audio.
       </audio>
-    </div>
-  )
+    </div>  )
 }
 
-export default Complete
+export default CompleteCircuit

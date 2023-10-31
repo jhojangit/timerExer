@@ -28,7 +28,7 @@ const Options = () => {
     setRounds(roundsNumber)
     e.target.roundsSetNumber.value = ""
 
-    if (timeSetNumber != 0 && timeSetNumber != 0 && roundsNumber != 0) {
+    if (timeSetNumber > 0 && timeSetNumber > 0 && roundsNumber > 0) {
       setIsWorkTrue()
       setStartTrue()
     }

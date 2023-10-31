@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import './options.css'
 import useOptions from '../../store/options'
 
@@ -68,69 +68,73 @@ const Options = () => {
 
 
   const handleInputChangeWork = (e) => {
-    const newValue = parseInt(e.target.value, 10); 
+    const newValue = parseInt(e.target.value, 10);
     setValueWork(newValue);
   };
-  
+
   const handleInputChangeRest = (e) => {
     const newValue = parseInt(e.target.value, 10);
     setValueRest(newValue);
   };
-  
+
   const handleInputChangeRounds = (e) => {
-    const newValue = parseInt(e.target.value, 10); 
+    const newValue = parseInt(e.target.value, 10);
     setValueRounds(newValue);
   };
 
 
   return (
-    <div>
+    <section className='options'>
 
-      <h2>OPTIONS</h2>
-
-
-      <form onSubmit={handleOptions}>
+      <h2 className='options__title'>OPTIONS</h2>
 
 
-        <p>Time to work</p>
-          <button onClick={handleDecrementWork}>-</button>
-            <input
-              type="number"
-              id='timeWorkNumber'
-              value={valueWork}
-              onChange={handleInputChangeWork}
-              className="no-spin-buttons" 
-            />
-          <button onClick={handleIncrementWork}>+</button>
+      <form className='options__form' onSubmit={handleOptions}>
+
+        <section className='options__section'>
+          <p className='options__section--name'>Time to work</p>
+          <button className='options__section--btn' onClick={handleDecrementWork}>-</button>
+          <input
+            type="number"
+            id='timeWorkNumber'
+            value={valueWork}
+            onChange={handleInputChangeWork}
+            className="options__section--input no-spin-buttons"
+          />
+          <button className='options__section--btn' onClick={handleIncrementWork}>+</button>
+        </section>
+
+        <section className='options__section'>
+          <p className='options__section--name'>Time to rest</p>
+          <button className='options__section--btn' onClick={handleDecrementRest}>-</button>
+          <input
+            type="number"
+            id='timeSetNumber'
+            value={valueRest}
+            onChange={handleInputChangeRest}
+            className="options__section--input no-spin-buttons"
+          />
+          <button className='options__section--btn' onClick={handleIncrementRest}>+</button>
+        </section>
 
 
-          <p>Time to rest</p>
-          <button onClick={handleDecrementRest}>-</button>
-            <input
-              type="number"
-              id='timeSetNumber'
-              value={valueRest}
-              onChange={handleInputChangeRest}
-              className="no-spin-buttons" 
-            />
-          <button onClick={handleIncrementRest}>+</button>
+        <section className='options__section'>
+          <p className='options__section--name'>Rounds</p>
+          <button className='options__section--btn' onClick={handleDecrementRounds}>-</button>
+          <input
+            type="number"
+            id='roundsSetNumber'
+            value={valueRounds}
+            onChange={handleInputChangeRounds}
+            className="options__section--input no-spin-buttons"
+          />
+          <button className='options__section--btn' onClick={handleIncrementRounds}>+</button>
+        </section>
 
 
-          <p>Rounds</p>
-          <button onClick={handleDecrementRounds}>-</button>
-            <input
-              type="number"
-              id='roundsSetNumber'
-              value={valueRounds}
-              onChange={handleInputChangeRounds}
-              className="no-spin-buttons" 
-            />
-          <button onClick={handleIncrementRounds}>+</button>
-
-
-        <input type="submit" value="SEND" />
+        <input className='options__section--submit' type="submit" value="START" />
       </form>
-    </div>
+    </section>
   )
 }
 

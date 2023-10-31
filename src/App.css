@@ -1,0 +1,21 @@
+.app{
+    background-color: var(--principal-color-dark);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+.app__title{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 50px;
+    background-color: orange;
+    text-align: center;
+}

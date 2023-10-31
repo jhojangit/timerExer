@@ -1,6 +1,9 @@
 :root {
-  --principal-color-black: #1f2533;
-  --secundary-color-black: #1e2538;
+  --principal-color-dark: #082032;
+  --principal-color-purple: #4D4C7D;
+  --principal-color-orange: #F99417;
+  --principal-color-white: #F5F5F5;
+  --titleHeight: 50px;
 }
 
 *{
@@ -8,7 +11,47 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  font-size: 20px;
+  font-style: italic;
 }
+
+h1, h2, h3, h4, h5, h6{
+  font-size: 1.5rem;
+  color: var(--principal-color-white);
+}
+
+input{
+  text-align: center;
+  width: 100px;
+  border-radius: 1rem;
+  outline-color: var(--principal-color-orange);
+  border: transparent 1px solid;
+}
+
+form{
+  display: flex;
+}
+
+button{
+  background-color: var(--principal-color-white);
+  border-radius: 1rem;
+  text-align: center;
+  width: 2rem;
+  border: solid 1px transparent;
+  cursor: pointer;
+  width: 20%;
+}
+
+button:hover{
+  background-color: var(--principal-color-orange);
+  color: var(--principal-color-white);
+}
+
+p{
+  color: var(--principal-color-white);
+}
+
 
 img{
   width: 100%;

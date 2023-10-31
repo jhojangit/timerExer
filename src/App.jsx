@@ -21,17 +21,10 @@ function App() {
       } = useOptions()
 
 
-      console.log(timeWork);
-      console.log(timeRest);
-      console.log(rounds);
-      console.log(currentRound);
-      console.log(isWork);
-      console.log(isRest);
-      console.log(start);
-      console.log(isFinish);
-      
   return (
-    <div className="App">
+    <div className="app">
+
+      <h1 className='app__title'>TimeExer</h1>
 
       {
         !start && isFinish &&  <Finish/> 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import useOptions from '../../store/options';
 import MakeSound from '../makeSound/MakeSound';
+import "./counter.css"
 
 
 
@@ -89,20 +90,22 @@ const Counter = ({ time, title }) => {
 
 
 
-
-
     return (
-        <div>
-            <h1>{title}</h1>
+        <main className='counter'>
+            <h1 className='counter__title'>¡{title}!</h1>
 
-            <section className="work__interface">
-                <h4>Rounds: {currentRound} / {rounds}</h4>
-                <h1>{seconds}</h1>
-                <button onClick={handlePauseToggle}>
-                    {isPaused ? 'Reanudar' : 'Pausar'}
-                </button>
+            <section className="counter__interface">
+                <h4 className='counter__interface--rounds'>Rounds: {currentRound} / {rounds}</h4>
+                <h1 className='counter__interface--seconds'>{seconds}</h1>
 
-                <button onClick={handleFinish}> Finish here</button>
+                <article className='counter__interface--btns'>
+                    <button className='counter__interface--btn' onClick={handlePauseToggle}>
+                        {isPaused ? 'Reanudar' : 'Pausar'}
+                    </button>
+
+                    <button className='counter__interface--btn' onClick={handleFinish}> Finish </button>
+                </article>
+
             </section>
 
 
@@ -123,7 +126,7 @@ const Counter = ({ time, title }) => {
             }
 
 
-        </div >
+        </main >
     )
 }
 

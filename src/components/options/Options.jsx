@@ -1,11 +1,15 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './options.css'
 import useOptions from '../../store/options'
+
 
 const Options = () => {
 
   const { setTimeWork, setTimeRest, setRounds, setIsWorkTrue, setStartTrue } = useOptions()
 
+  const [valueWork, setValueWork] = useState(0);
+  const [valueRest, setValueRest] = useState(0);
+  const [valueRounds, setValueRounds] = useState(0);
 
 
   const handleOptions = (e) => {
@@ -24,15 +28,59 @@ const Options = () => {
     setRounds(roundsNumber)
     e.target.roundsSetNumber.value = ""
 
-
     if (timeSetNumber != 0 && timeSetNumber != 0 && roundsNumber != 0) {
       setIsWorkTrue()
       setStartTrue()
     }
-
   }
 
+  const handleIncrementWork = (e) => {
+    e.preventDefault()
+    setValueWork(valueWork + 1);
+  };
 
+  const handleDecrementWork = (e) => {
+    e.preventDefault()
+    setValueWork(valueWork - 1);
+  };
+
+  const handleIncrementRest = (e) => {
+    e.preventDefault()
+    setValueRest(valueRest + 1);
+  };
+
+  const handleDecrementRest = (e) => {
+    e.preventDefault()
+    setValueRest(valueRest - 1);
+  };
+
+  const handleIncrementRounds = (e) => {
+    e.preventDefault()
+    setValueRounds(valueRounds + 1);
+  };
+
+  const handleDecrementRounds = (e) => {
+    e.preventDefault()
+    setValueRounds(valueRounds - 1);
+  };
+
+
+
+
+  const handleInputChangeWork = (e) => {
+    const newValue = parseInt(e.target.value, 10); 
+    setValueWork(newValue);
+  };
+  
+  const handleInputChangeRest = (e) => {
+    const newValue = parseInt(e.target.value, 10);
+    setValueRest(newValue);
+  };
+  
+  const handleInputChangeRounds = (e) => {
+    const newValue = parseInt(e.target.value, 10); 
+    setValueRounds(newValue);
+  };
 
 
   return (
@@ -42,35 +90,43 @@ const Options = () => {
 
 
       <form onSubmit={handleOptions}>
-        <label> Time to work
-          <input className='options__btn buttonApp'
-            type="text"
-            pattern="[0-9]*"
-            inputMode="numeric"
-            name="timeWorkNumber"
-            id="timeWorkNumber"
-            required />
-        </label>
 
-        <label> Time to rest
-          <input className='options__btn buttonApp'
-            type="text"
-            pattern="[0-9]*"
-            inputMode="numeric"
-            name="timeSetNumber"
-            id="timeSetNumber"
-            required />
-        </label>
 
-        <label> Rounds
-          <input className='options__btn buttonApp'
-            type="text"
-            pattern="[0-9]*"
-            inputMode="numeric"
-            name="roundsSetNumber"
-            id="roundsSetNumber"
-            required />
-        </label>
+        <p>Time to work</p>
+          <button onClick={handleDecrementWork}>-</button>
+            <input
+              type="number"
+              id='timeWorkNumber'
+              value={valueWork}
+              onChange={handleInputChangeWork}
+              className="no-spin-buttons" 
+            />
+          <button onClick={handleIncrementWork}>+</button>
+
+
+          <p>Time to rest</p>
+          <button onClick={handleDecrementRest}>-</button>
+            <input
+              type="number"
+              id='timeSetNumber'
+              value={valueRest}
+              onChange={handleInputChangeRest}
+              className="no-spin-buttons" 
+            />
+          <button onClick={handleIncrementRest}>+</button>
+
+
+          <p>Rounds</p>
+          <button onClick={handleDecrementRounds}>-</button>
+            <input
+              type="number"
+              id='roundsSetNumber'
+              value={valueRounds}
+              onChange={handleInputChangeRounds}
+              className="no-spin-buttons" 
+            />
+          <button onClick={handleIncrementRounds}>+</button>
+
 
         <input type="submit" value="SEND" />
       </form>

@@ -9,19 +9,38 @@ const Counter = ({ time, title }) => {
 
 
     const { rounds, 
-        setIsWorkFalse, 
+        setIsWorkFalse,
         setIsWorkTrue, 
         setIsRestFalse, 
         setIsRestTrue, 
-        setRoundsMinus, 
+        setRoundsPlus,
+        setTimeWork,
+        setTimeRest, 
         isWork, 
         isRest, 
+        currentRound,
+        setCurrentRound,
+        setRoundsRestart,
+        setIsWorkRestart,
+        setIsRestRestart,
         setStartFalse,
-        setFinish } = useOptions();
+        isFinish,
+        setFinishTrue } = useOptions();
 
     const [seconds, setSeconds] = useState(time);
     const [isPaused, setIsPaused] = useState(false);
 
+
+    const handleFinish = () => {
+        setFinishTrue()
+        setRoundsRestart()
+        setIsWorkRestart()
+        setIsRestRestart()
+        setStartFalse()
+        setTimeWork(0)
+        setTimeRest(0)
+        setCurrentRound(1)
+    };
 
 
 
@@ -30,7 +49,7 @@ const Counter = ({ time, title }) => {
 
         let counter;
 
-        if (rounds > 0 && !isPaused) {
+        if (currentRound <= rounds+1 && !isPaused) {
 
 
             counter = setInterval(() => {
@@ -44,8 +63,8 @@ const Counter = ({ time, title }) => {
                             setIsWorkFalse();
                         }
                         if (isRest) {
-                            let count = rounds - 1;
-                            setRoundsMinus(count);
+                            let count = currentRound + 1;
+                            setRoundsPlus(count);
                             setIsRestFalse();
                             setIsWorkTrue();
                         }
@@ -55,8 +74,8 @@ const Counter = ({ time, title }) => {
             }, 1000);
         }
 
-        if (rounds === 0) {
-            setFinish()
+        if (currentRound > rounds) {
+            handleFinish()
         }
 
         return () => clearInterval(counter);
@@ -67,9 +86,7 @@ const Counter = ({ time, title }) => {
         setIsPaused((prevIsPaused) => !prevIsPaused);
     };
 
-    const handleFinish = () => {
-        setFinish()
-    };
+
 
 
 
@@ -79,7 +96,7 @@ const Counter = ({ time, title }) => {
             <h1>{title}</h1>
 
             <section className="work__interface">
-                <h4>Rounds: {rounds}</h4>
+                <h4>Rounds: {currentRound} / {rounds}</h4>
                 <h1>{seconds}</h1>
                 <button onClick={handlePauseToggle}>
                     {isPaused ? 'Reanudar' : 'Pausar'}
@@ -91,7 +108,7 @@ const Counter = ({ time, title }) => {
 
 
             {
-                isWork &&
+                isWork  &&
                 <section>
                     <MakeSound music={"/bell.mp3"}/>
                 </section>

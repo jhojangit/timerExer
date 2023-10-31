@@ -7,7 +7,7 @@ const MakeSound = ({music}) => {
     
     const sound = new Howl({
         src: [music],
-        volume: 1.0, 
+        volume: 0.1, 
     });
 
     useEffect(() => {

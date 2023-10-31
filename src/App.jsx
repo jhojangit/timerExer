@@ -2,30 +2,43 @@ import './App.css';
 import useOptions from './store/options';
 import Options from './components/options/Options';
 import Counter from './components/Counter/Counter';
-import MakeSound from './components/makeSound/MakeSound';
+import Finish from './components/finish/Finish';
 
 
 function App() {
 
 
-  const { timeWork } = useOptions()
-  const { timeRest } = useOptions()
-  const { rounds } = useOptions()
-  const { isWork } = useOptions()
-  const { isRest } = useOptions()
-  const { start } = useOptions()
+
+    const { 
+      timeWork,
+      timeRest,
+      rounds,
+      currentRound,
+      isWork,
+      isRest,
+      start,
+      isFinish
+      } = useOptions()
 
 
+      console.log(timeWork);
+      console.log(timeRest);
+      console.log(rounds);
+      console.log(currentRound);
+      console.log(isWork);
+      console.log(isRest);
+      console.log(start);
+      console.log(isFinish);
+      
   return (
     <div className="App">
 
       {
-        !start && <MakeSound music={"/complete.mp3"}/>
+        !start && isFinish &&  <Finish/> 
       }
 
       {
         !start && <Options />
-        
       }
 
 

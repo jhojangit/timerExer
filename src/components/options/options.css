@@ -1,0 +1,9 @@
+.no-spin-buttons::-webkit-inner-spin-button,
+.no-spin-buttons::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; /* Oculta las flechas en navegadores Webkit (Chrome, Safari) */
+}
+
+.no-spin-buttons::-moz-number-spin {
+  display: none; /* Oculta las flechas en Firefox */
+}

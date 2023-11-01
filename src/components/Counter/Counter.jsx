@@ -26,10 +26,20 @@ const Counter = ({ time, title }) => {
         setIsRestRestart,
         setStartFalse,
         isFinish,
-        setFinishTrue } = useOptions();
+        setFinishTrue,
+        setIsLastRestTrue,
+        setIsLastRestFalse,
+        isLast,
+        setIsLastTrue,
+        setIsLastFalse,
+        setIsLastWorktrue,
+        setIsLastWorkFalse,
+        isLastWork,  
+        isLastRest   } = useOptions();
 
     const [seconds, setSeconds] = useState(time);
     const [isPaused, setIsPaused] = useState(false);
+    const [finalTitle, setFinalTitle] = useState("It's the last");
 
 
     const handleFinish = () => {
@@ -41,6 +51,9 @@ const Counter = ({ time, title }) => {
         setTimeWork(0)
         setTimeRest(0)
         setCurrentRound(1)
+        setIsLastRestFalse()
+        setIsLastWorkFalse()
+        setIsLastFalse()
     };
 
 
@@ -50,6 +63,8 @@ const Counter = ({ time, title }) => {
 
         let counter;
 
+
+
         if (currentRound <= rounds+1 && !isPaused) {
 
 
@@ -57,23 +72,49 @@ const Counter = ({ time, title }) => {
                 setSeconds((prevSeconds) => {
                     const newSeconds = prevSeconds - 1;
 
-                    if (newSeconds < 0) {
-                        clearInterval(counter);
-                        if (isWork) {
-                            setIsRestTrue();
-                            setIsWorkFalse();
+                    if(currentRound != rounds){
+                        if (newSeconds < 0) {
+                            clearInterval(counter);
+                            if (isWork) {
+                                setIsRestTrue();
+                                setIsWorkFalse();
+                            }
+                            if (isRest) {
+                                let count = currentRound + 1;
+                                setRoundsPlus(count);
+                                setIsRestFalse();
+                                setIsWorkTrue();
+                            }
                         }
-                        if (isRest) {
-                            let count = currentRound + 1;
-                            setRoundsPlus(count);
-                            setIsRestFalse();
-                            setIsWorkTrue();
+                    }
+
+                    
+                    if(currentRound == rounds){
+                        setIsLastTrue()
+                        if (newSeconds < 0) {
+                            clearInterval(counter);
+                            if (isWork) {
+                                setIsRestTrue();
+                                setFinalTitle("Breathe");
+                                setIsWorkFalse();
+                                setIsLastRestTrue()
+                            }
+                            
+                            
+                            if (isRest) {
+                                let count = currentRound + 1;
+                                setRoundsPlus(count);
+                                setIsRestFalse();
+                                setIsWorkTrue();
+                            }
                         }
                     }
                     return newSeconds;
                 });
             }, 1000);
         }
+
+
 
         if (currentRound > rounds) {
             handleFinish()
@@ -92,7 +133,13 @@ const Counter = ({ time, title }) => {
 
     return (
         <main className='counter'>
-            <h1 className='counter__title'>¡{title}!</h1>
+            {
+                !isLast 
+                ? <h1 className='counter__title'>¡{title}!</h1>
+                : <h1 className='counter__title'>¡{finalTitle}!</h1>
+            }
+
+
 
             <section className="counter__interface">
                 <h4 className='counter__interface--rounds'>Rounds: {currentRound} / {rounds}</h4>

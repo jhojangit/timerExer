@@ -15,6 +15,7 @@
 
 .counter__title{
     color: var(--principal-color-white);
+    font-size: 2rem;
 }
 
 .counter__interface{
@@ -27,6 +28,7 @@
 .counter__interface--seconds{
     margin: 1rem 0;
     color: var(--principal-color-white);
+    font-size: 3rem;
 }
 
 .counter__interface--btns{

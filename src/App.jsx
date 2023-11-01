@@ -8,7 +8,6 @@ import Finish from './components/finish/Finish';
 function App() {
 
 
-
     const { 
       timeWork,
       timeRest,
@@ -24,7 +23,7 @@ function App() {
   return (
     <div className="app">
 
-      <h1 className='app__title'>TimeExer</h1>
+      <h1 className='app__title'>TimerExer</h1>
 
       {
         !start && isFinish &&  <Finish/> 

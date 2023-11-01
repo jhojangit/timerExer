@@ -86,7 +86,6 @@ const Options = () => {
   return (
     <section className='options'>
 
-      <h2 className='options__title'>OPTIONS</h2>
 
 
       <form className='options__form' onSubmit={handleOptions}>
@@ -96,6 +95,9 @@ const Options = () => {
           <button className='options__section--btn' onClick={handleDecrementWork}>-</button>
           <input
             type="number"
+            pattern='[0-9]'
+            max={99}
+            min={1}
             id='timeWorkNumber'
             value={valueWork}
             onChange={handleInputChangeWork}
@@ -109,6 +111,9 @@ const Options = () => {
           <button className='options__section--btn' onClick={handleDecrementRest}>-</button>
           <input
             type="number"
+            pattern='[0-9]'
+            max={99}
+            min={1}
             id='timeSetNumber'
             value={valueRest}
             onChange={handleInputChangeRest}
@@ -123,6 +128,9 @@ const Options = () => {
           <button className='options__section--btn' onClick={handleDecrementRounds}>-</button>
           <input
             type="number"
+            pattern='[0-9]'
+            max={99}
+            min={1}
             id='roundsSetNumber'
             value={valueRounds}
             onChange={handleInputChangeRounds}

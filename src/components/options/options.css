@@ -44,6 +44,7 @@
 }
 .options__section--btn{
   margin: 0 0.5rem;
+  max-width: 45px;
 }
 
 .options__section--submit{

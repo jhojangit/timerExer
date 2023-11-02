@@ -93,31 +93,13 @@ const Counter = ({ time, title }) => {
                         setIsLastTrue()
                         if (newSeconds < 0) {
                             clearInterval(counter);
-                            if (isWork) {
-                                setIsRestTrue();
-                                setFinalTitle("Breathe");
-                                setIsWorkFalse();
-                                setIsLastRestTrue()
-                            }
                             
-                            
-                            if (isRest) {
-                                let count = currentRound + 1;
-                                setRoundsPlus(count);
-                                setIsRestFalse();
-                                setIsWorkTrue();
-                            }
+                                handleFinish()
                         }
                     }
                     return newSeconds;
                 });
             }, 1000);
-        }
-
-
-
-        if (currentRound > rounds) {
-            handleFinish()
         }
 
         return () => clearInterval(counter);

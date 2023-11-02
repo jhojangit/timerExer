@@ -1,6 +1,7 @@
 import React from 'react'
 import MakeSound from '../makeSound/MakeSound'
 import useOptions from '../../store/options'
+import "./finish.css"
 
 
 const Finish = () => {
@@ -10,12 +11,12 @@ const Finish = () => {
 
     setTimeout(() => {
         setFinishFalse()
-    }, "3000")
+    }, "4000")
 
     
     return (
-        <div>
-            <h1>END</h1>
+        <div className='finish'>
+            <h3 className='finish__text'>Congratulations! You've completed your workout! <br /> <br /> GREAT JOB! 💪👏</h3>
             <MakeSound music={"/complete.mp3"} />
         </div>
     )

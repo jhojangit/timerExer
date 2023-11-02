@@ -30,7 +30,7 @@ function App() {
       }
 
       {
-        !start && <Options />
+        !start && !isFinish&& <Options />
       }
 
 

@@ -91,7 +91,7 @@ const Options = () => {
       <form className='options__form' onSubmit={handleOptions}>
 
         <section className='options__section'>
-          <p className='options__section--name'>Time to work</p>
+          <p className='options__section--name'>Seconds to work</p>
           <button className='options__section--btn' onClick={handleDecrementWork}>-</button>
           <input
             type="number"
@@ -107,7 +107,7 @@ const Options = () => {
         </section>
 
         <section className='options__section'>
-          <p className='options__section--name'>Time to rest</p>
+          <p className='options__section--name'>Seconds to rest</p>
           <button className='options__section--btn' onClick={handleDecrementRest}>-</button>
           <input
             type="number"

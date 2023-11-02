@@ -39,7 +39,6 @@ const Counter = ({ time, title }) => {
 
     const [seconds, setSeconds] = useState(time);
     const [isPaused, setIsPaused] = useState(false);
-    const [finalTitle, setFinalTitle] = useState("It's the last");
 
 
     const handleFinish = () => {
@@ -63,17 +62,14 @@ const Counter = ({ time, title }) => {
 
         let counter;
 
-
-
         if (currentRound <= rounds+1 && !isPaused) {
-
 
             counter = setInterval(() => {
                 setSeconds((prevSeconds) => {
                     const newSeconds = prevSeconds - 1;
 
                     if(currentRound != rounds){
-                        if (newSeconds < 0) {
+                        if (newSeconds < 1) {
                             clearInterval(counter);
                             if (isWork) {
                                 setIsRestTrue();
@@ -88,10 +84,9 @@ const Counter = ({ time, title }) => {
                         }
                     }
 
-                    
                     if(currentRound == rounds){
                         setIsLastTrue()
-                        if (newSeconds < 0) {
+                        if (newSeconds < 1) {
                             clearInterval(counter);
                             
                                 handleFinish()
@@ -118,7 +113,7 @@ const Counter = ({ time, title }) => {
             {
                 !isLast 
                 ? <h1 className='counter__title'>¡{title}!</h1>
-                : <h1 className='counter__title'>¡{finalTitle}!</h1>
+                : <h1 className='counter__title'>¡It's the last!</h1>
             }
 
 

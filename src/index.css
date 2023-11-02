@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Kurale&display=swap');
+
+
 :root {
   --principal-color-dark: #082032;
   --principal-color-purple: #4D4C7D;
@@ -11,9 +14,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 20px;
+  font-size: 23px;
   font-style: italic;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Kurale', serif;
 }
 
 h1, h2, h3, h4, h5, h6{

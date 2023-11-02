@@ -3,6 +3,7 @@ import useOptions from './store/options';
 import Options from './components/options/Options';
 import Counter from './components/Counter/Counter';
 import Finish from './components/finish/Finish';
+import Precount from './components/preCount/Precount';
 
 
 function App() {
@@ -16,7 +17,8 @@ function App() {
       isWork,
       isRest,
       start,
-      isFinish
+      isFinish,
+      preCount
       } = useOptions()
 
 
@@ -30,12 +32,16 @@ function App() {
       }
 
       {
-        !start && !isFinish&& <Options />
+        !start && !isFinish&& !preCount&& <Options />
+      }
+
+      {
+        preCount && <Precount/>
       }
 
 
       {
-        start && isWork && !isRest &&
+        start && isWork && !isRest && !preCount &&
         <Counter
           time={timeWork}
           timeWork={timeWork}
@@ -44,7 +50,7 @@ function App() {
       }
 
       {
-        start && !isWork && isRest &&
+        start && !isWork && isRest && !preCount &&
         <Counter
           time={timeRest}
           timeWork={timeWork}

@@ -5,7 +5,7 @@ import useOptions from '../../store/options'
 
 const Options = () => {
 
-  const { setTimeWork, setTimeRest, setRounds, setIsWorkTrue, setStartTrue } = useOptions()
+  const { setTimeWork, setTimeRest, setRounds, setIsWorkTrue, setStartTrue, setPrecountTrue } = useOptions()
 
   const [valueWork, setValueWork] = useState(0);
   const [valueRest, setValueRest] = useState(0);
@@ -29,8 +29,7 @@ const Options = () => {
     e.target.roundsSetNumber.value = ""
 
     if (timeSetNumber > 0 && timeSetNumber > 0 && roundsNumber > 0) {
-      setIsWorkTrue()
-      setStartTrue()
+      setPrecountTrue()
     }
   }
 

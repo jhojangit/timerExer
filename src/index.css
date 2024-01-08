@@ -4,7 +4,7 @@
 :root {
   --principal-color-dark: #082032;
   --principal-color-purple: #4D4C7D;
-  --principal-color-orange: #F99417;
+  --principal-color: #6edff6;
   --principal-color-white: #F5F5F5;
   --titleHeight: 50px;
 }
@@ -29,7 +29,7 @@ input{
   text-align: center;
   width: 100px;
   border-radius: 1rem;
-  outline-color: var(--principal-color-orange);
+  outline-color: var(--principal-color);
   border: transparent 1px solid;
 }
 
@@ -48,7 +48,7 @@ button{
 }
 
 button:hover{
-  background-color: var(--principal-color-orange);
+  background-color: var(--principal-color);
   color: var(--principal-color-white);
 }
 

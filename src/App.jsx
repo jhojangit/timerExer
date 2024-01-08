@@ -4,6 +4,7 @@ import Options from './components/options/Options';
 import Counter from './components/Counter/Counter';
 import Finish from './components/finish/Finish';
 import Precount from './components/preCount/Precount';
+import Footer from './components/footer/Footer';
 
 
 function App() {
@@ -57,6 +58,8 @@ function App() {
           timeRest={timeRest}
           title={"REST"} />
       }
+
+      <Footer/>
     </div>
   );
 };

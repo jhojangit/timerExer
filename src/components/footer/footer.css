@@ -1,0 +1,8 @@
+.footer__container{
+    position: absolute;
+    bottom: 1rem;
+}
+
+.footer__text{
+    color: var(--principal-color);
+}

@@ -7,7 +7,7 @@
     text-align: center;
     gap: 2rem;
 
-    border: 1px solid var(--principal-color-orange);
+    border: 1px solid var(--principal-color);
     border-top: 0px;
     border-radius: 1rem;
     padding: 0 1rem;

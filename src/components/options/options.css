@@ -17,30 +17,25 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--principal-color-orange);
+  border: 1px solid var(--principal-color);
   border-top: 0px;
   border-radius: 1rem;
   width: 500px;
   max-width: 80%;
+  margin-top: -.5rem;
 }
 
-.options__form{
-  margin: 1rem 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  gap: 1.3rem;
-  text-align: center;
-}
+
 
 .options__section{
-  width: 100%;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .options__section--name{
-  margin-bottom: .3rem;
+  margin-top: 1rem;
 }
 .options__section--btn{
   margin: 0 0.5rem;
@@ -49,13 +44,14 @@
 
 .options__section--submit{
   cursor: pointer;
-  background-color: var(--principal-color-orange);
+  background-color: var(--principal-color);
   color: var(--principal-color-white);
   transition: color 200ms;
+  width: 100%;
 }
 
 .options__section--submit:hover{
   background-color: var(--principal-color-white);
-  color: var(--principal-color-orange);
+  color: var(--principal-color);
 }
 
